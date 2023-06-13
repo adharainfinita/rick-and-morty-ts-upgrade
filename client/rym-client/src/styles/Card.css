@@ -1,0 +1,94 @@
+.card {
+    border-radius: 10px;
+    text-align: center;
+    font-family: monospace;
+    margin: 0 auto;
+    margin-top: 5%;
+    height: 300px;
+    width: 400px;
+    border-end-end-radius: 30%;
+    background-color: rgba(19, 19, 19, 0.765);
+    
+}
+
+
+#detail{
+    text-decoration: none;
+}
+.card .img{
+    max-width: 200px;
+    max-height: 70%;
+    border: solid 2px pink;
+    filter: drop-shadow(10 px 20px whitesmoke);
+    
+}
+.card #name {
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    font-variant: small-caps;
+    color: oldlace;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.585), #651577);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 15%;
+    padding-bottom: 2%;
+    border-left: 1px solid whitesmoke;
+}
+.card #top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card #bottom {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    max-height: 20%;
+    border-bottom-right-radius: 60%;
+}
+
+.card .text {
+    width: 40%;
+    color: black;
+    font-weight: 200;
+    font-size: 15px;
+    border-radius: 0 2px 2px 0;
+    background: #15ff00e5;
+}
+
+.favButton {
+    position: absolute;
+    background: none;
+    border: hidden;
+    font-size: 40px;
+    color: rgba(128, 128, 128, 0.401)
+}
+
+
+.like-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.closer {
+    background: none;
+    border: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: bolder;
+    width: 25px;
+    height: 25px;
+    color:oldlace;
+}
+
+#detail :hover{
+    border-radius: 25px;
+    filter: brightness(100%);
+    transition: ease-in 250ms;
+    color: rgb(226, 237, 236);
+}
+
+.like-img :hover{
+    color: rgb(226, 237, 236);
+}
