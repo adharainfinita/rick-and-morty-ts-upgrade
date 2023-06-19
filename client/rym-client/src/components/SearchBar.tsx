@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useDispatch} from "react-redux";
 import { addCharacter } from "../features/charactersSlice";
 import axios from "axios";
-import { URL_BASE } from "../utils/api";
+import { URL_CHARACTER } from "../utils/api";
 
 
 export const SearchBar: React.FC = ()=>{
@@ -14,7 +14,7 @@ export const SearchBar: React.FC = ()=>{
     }
 
     const fetchData = async(id:string) =>{
-        return await axios(`${URL_BASE}/${id}`)
+        return await axios(`${URL_CHARACTER}/${id}`)
     }
 
     const onSearch = async(id:string)=>{

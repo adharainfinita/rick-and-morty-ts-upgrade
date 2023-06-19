@@ -3,7 +3,7 @@ import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 // import axios from "axios";
-import { URL_BASE } from "../utils/api";
+import { URL_CHARACTER} from "../utils/api";
 import { addDetail, cleanDetail } from "../features/charDetailSlice";
 
 const useCharacterDetail = ()=>{
@@ -15,7 +15,7 @@ const character = useSelector((state: RootState) => state.characterDetail.value)
     useEffect(() => {
      
         try {
-           fetch(`${URL_BASE}/${id}`)
+           fetch(`${URL_CHARACTER}/${id}`)
             .then(response => response.json())
             .then(data => dispatch(addDetail(data)))
             }
