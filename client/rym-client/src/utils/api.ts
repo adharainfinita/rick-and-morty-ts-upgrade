@@ -1,5 +1,6 @@
 
-export const URL_BASE ="https://rick-and-morty-tsupgrade.up.railway.app";
-export const URL_CHARACTER= "https://rick-and-morty-tsupgrade.up.railway.app/character";
-export const URL_LOGIN = 'https://rick-and-morty-tsupgrade.up.railway.app/login';
-export const URL_FAVORITES = 'https://rick-and-morty-tsupgrade.up.railway.app/fav';
+export const URL_BASE ="rick-and-morty-ts-upgrade-production.up.railway.app";
+
+export const URL_CHARACTER= "rick-and-morty-ts-upgrade-production.up.railway.app/character";
+export const URL_LOGIN = 'rick-and-morty-ts-upgrade-production.up.railway.app/login';
+export const URL_FAVORITES = 'rick-and-morty-ts-upgrade-production.up.railway.app/fav';

@@ -50,6 +50,13 @@ form{
     border-radius: 50%;
 }
 
+#eyeButton img {
+    height: 30px;
+    width: 50px;
+    border-radius: 50%;
+    filter: invert(100%);
+}
+
 .form #title {
     font-family: 'Trebuchet MS', sans-serif;
     color: rgb(6, 58, 61);
