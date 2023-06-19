@@ -7,9 +7,9 @@ import FavoritesUsers from "./models/FavoritesUser"
 
 dotenv.config();
 
-const {DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, PORT} = process.env;
+const {DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT} = process.env;
 
-if (!DB_NAME || !DB_USER || !DB_PASSWORD || !DB_HOST || !PORT) {
+if (!DB_NAME || !DB_USER || !DB_PASSWORD || !DB_HOST || !DB_PORT) {
   throw new Error("Falta alguna variable de entorno requerida");
 }
 
@@ -20,7 +20,7 @@ const sequelize = new Sequelize(
     DB_PASSWORD,
     {
       host: DB_HOST,
-      port: Number(PORT),
+      port: Number(DB_PORT),
       dialect: "postgres",
       models: [User,Favorites, FavoritesUsers]
     }
