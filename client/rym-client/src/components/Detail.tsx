@@ -1,4 +1,5 @@
 import useCharacterDetail from "../hooks/useCharacter";
+import "../styles/Detail.css"
 
 export const Detail:React.FC = ()=>{
     const character = useCharacterDetail();

@@ -4,8 +4,9 @@ import { RootState } from "../store";
 import { addFav, removeFav } from "../features/favoritesSlice";
 import { URL_FAVORITES } from "../utils/api";
 import axios from "axios";
-import { Link } from "react-router-dom";
-// import  "../styles/Card.css";
+import { Link, useLocation } from "react-router-dom";
+import  "../styles/Card.css";
+
 
 interface CardProps {
     name: string;
@@ -15,14 +16,15 @@ interface CardProps {
     origin: string;
     image: string;
     id: number;
+    onClose: Function 
   }
 
-export const Card = ({name, status, species, gender, image, origin, id}: CardProps) =>{
+export const Card = ({name, status, species, gender, image, origin, id, onClose}: CardProps) =>{
    const dispatch = useDispatch();
    const myFavorites = useSelector((state:RootState) => state.favorites.value);
    const user = useSelector((state:RootState) => state.user.value);
    const userId: number = user.id;
-
+   const location = useLocation();
 
    const [isFav, setIsFav]= useState(false);
 
@@ -67,7 +69,7 @@ export const Card = ({name, status, species, gender, image, origin, id}: CardPro
         <div>
               <section id="top">
                <h4 className="text">Card N°{id}</h4>
-            {/* <button onClick={()=>onClose(id)} className="closer">X</button> */}
+             <button disabled={location.pathname === "/favorites" ? true : false} onClick={()=>onClose(id)} className="closer">X</button> 
             </section>
             <section id="center">
                <div className="like-img">

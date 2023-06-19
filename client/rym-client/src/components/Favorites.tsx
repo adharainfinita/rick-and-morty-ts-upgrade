@@ -5,13 +5,17 @@ import { useDispatch } from "react-redux";
 import { filterFav, orderFav, getAllFav } from "../features/favoritesSlice";
 import {useEffect} from "react";
 import { URL_FAVORITES } from "../utils/api";
+import "../styles/Favorites.css";
+import { removeCharacter } from "../features/charactersSlice";
 
 export const Favorites = () =>{
     const dispatch = useDispatch();
     const myFavorites = useSelector((state:RootState) => state.favorites.value);
     const userID = useSelector((state:RootState) => state.user.value.id)
   
-    
+    const onClose =(id:any)=>{
+        dispatch(removeCharacter(id))
+    }
     useEffect(()=>{
             fetch(`${URL_FAVORITES}/${userID}`)
             .then(response => response.json())
@@ -56,7 +60,7 @@ export const Favorites = () =>{
                             gender={char.gender}
                             origin={char.origin}
                             image={char.image}
-            // onClose={onClose}
+                        onClose={onClose}
                         />
                     </div>
         

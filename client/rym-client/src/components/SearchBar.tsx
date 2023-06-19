@@ -3,6 +3,8 @@ import {useDispatch} from "react-redux";
 import { addCharacter } from "../features/charactersSlice";
 import axios from "axios";
 import { URL_CHARACTER } from "../utils/api";
+import "../styles/SearchBar-Styles.css";
+import swal from "sweetalert";
 
 
 export const SearchBar: React.FC = ()=>{
@@ -31,7 +33,9 @@ export const SearchBar: React.FC = ()=>{
             const errorMessage = error.response
             ? error.response.data.error
             : error.message;
-            alert(errorMessage);
+            console.log(errorMessage);
+            
+            swal('¡WUBA LUBA DUB DUB!','¡No hay personajes con este ID!', 'error');
         }
        
         // else swal('¡WUBA LUBA DUB DUB!','¡No hay personajes con este ID!', 'error');
