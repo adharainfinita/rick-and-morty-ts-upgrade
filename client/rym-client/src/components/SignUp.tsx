@@ -6,11 +6,13 @@ import { URL_BASE, URL_LOGIN } from "../utils/api";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styles from '../styles/SignUp.module.css'
 
 // import swal from 'sweetalert';
 // import { ButtonList } from "sweetalert/typings/modules/options/buttons";
 
 export const SignUp = () =>{
+
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const [userData, setUserData] = useState<FormValues>({
@@ -100,7 +102,7 @@ export const SignUp = () =>{
     
     return (
         <form  onSubmit={handleOnSubmit}>
-            
+            <button className={styles.cancel} onClick={()=>{navigate("/")}}>Volver atrás</button>
             {count === 0 && (
                 <>
                 <h1> ¿Deseas escribir un nombre o prefieres que escoja uno aleatorio? </h1>  

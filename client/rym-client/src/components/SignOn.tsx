@@ -6,7 +6,7 @@ import { addUser, authorizeUser } from "../features/userSlice";
 import axios from "axios";
 import { URL_BASE, URL_LOGIN } from "../utils/api";
 import validate from "../utils/validate";
-import "../styles/Login.css"
+import styles from "../styles/Login.module.css"
 
 export interface FormValues {
     email: string;
@@ -84,40 +84,41 @@ export const SignOn: React.FC = () => {
     
     return (
         <div>
-      <form className="form"  onSubmit={handleOnSubmit}>
-        <h1 id="title">Ingresar a la App</h1>
-        <section>
-          <label htmlFor="email">Email: </label>
+      <form className={styles.form}  onSubmit={handleOnSubmit}>
+        <h1 className={styles.title}>Ingresar a la App</h1>
+        <section className={styles.section}>
+          <label className={styles.label} htmlFor="email">Email: </label>
         <input
-            id="email"
+           className={styles.input}
             name="email"
             type="email"
             placeholder="Ingrese su email"
             onChange={handleOnChange}
             defaultValue={user.email}
         />
-        {errors.email && <p className="errors">{errors.email}</p>}
+        {errors.email && <p className={styles.errors}>{errors.email}</p>}
         </section>
         
-        <section>
-          <label htmlFor="password">Password: </label>
+        <section className={styles.section}>
+          <label className={styles.label} htmlFor="password">Password: </label>
           <input
-            id="password"
+            className={styles.input}
             name="password"
             type={showPassword ? "text" : "password"}
             placeholder="Ingrese su password"
             defaultValue={user.password}
             onChange={handleOnChange}
             />
-        <button id="eyeButton" type="button" onClick={handleShowPassword}>
+        <button className={styles.buttonPassword} type="button" onClick={handleShowPassword}>
             {showPassword 
-            ? <img src="https://www.pngitem.com/pimgs/m/76-760338_close-eye-svg-closed-eye-icon-hd-png.png" /> 
-            : <img src="https://www.clipartmax.com/png/middle/291-2914907_eye-icon-vector-image-auge-symbol.png" />}
+            ? <img className={styles.eyeButtonImg} src="https://www.pngitem.com/pimgs/m/76-760338_close-eye-svg-closed-eye-icon-hd-png.png" /> 
+            : <img className={styles.eyeButtonImg} src="https://www.clipartmax.com/png/middle/291-2914907_eye-icon-vector-image-auge-symbol.png" />}
         </button>
-        {errors.password && <p className="errors">{errors.password}</p>}
+        {errors.password && <p className={styles.errors}>{errors.password}</p>}
           </section>
-        <section>
+        <section className={styles.section}>
           <button
+          className={styles.button}
             type="submit"
             // onClick={handleOnSubmit}
             disabled={
@@ -127,7 +128,7 @@ export const SignOn: React.FC = () => {
             }>
             Entrar
         </button>
-          <h4>¿No tienes cuenta? Genera una rápidamente <Link to="/new">Aquí</Link></h4> 
+          <h4 className={styles.title}>¿No tienes cuenta? Genera una rápidamente <Link to="/new">Aquí</Link></h4> 
         </section>
         
     </form>

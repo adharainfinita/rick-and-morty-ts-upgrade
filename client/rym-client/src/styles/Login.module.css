@@ -1,9 +1,6 @@
 
-div{
-    background: none;
-    align-items: center;
-}
-form{
+
+.form{
     
     background-color: grey;
     max-width: 350px;
@@ -17,7 +14,7 @@ form{
     border-radius: 10px;
 }
 
-.form section {
+.section {
     display: flex;
     margin: 2%;
     padding: 1%;
@@ -27,37 +24,41 @@ form{
     justify-content: space-evenly;
     align-items: center;
 }
-.form input {
+.input {
     width: 90%;
     height: 30px;
     margin: 0.5rem;
 }
-.form label{
+.label{
     justify-content: center;
+    color: rgb(6, 58, 61);
 }
 
-.form button {
+.button {
+    color: rgb(6, 58, 61);
     padding: 0.5em 1em;
     border: none;
     background: rgb(100, 200, 255);
     cursor: pointer;
 }
-
-#eyeButton{
-    border: none;
-    background: rgb(91, 128, 148);
-    cursor: pointer;
-    border-radius: 50%;
+.buttonPassword{
+    background: none;
 }
 
-#eyeButton img {
+.errors {
+    color: rgb(138, 31, 8);
+    font-weight: 200;
+    font-size: 12px;
+    margin: auto;
+}
+
+.eyeButtonImg {
     height: 30px;
     width: 50px;
     border-radius: 50%;
-    filter: invert(100%);
 }
 
-.form #title {
+.title {
     font-family: 'Trebuchet MS', sans-serif;
     color: rgb(6, 58, 61);
     

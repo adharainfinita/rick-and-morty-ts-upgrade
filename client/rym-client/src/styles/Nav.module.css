@@ -1,0 +1,23 @@
+.Nav  {
+    display: flex;
+    background-image: linear-gradient(#000000ae, #093846e8);
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    width: 1200px;
+    border-bottom: solid whitesmoke 1px;
+    border-radius: 10px;
+    
+}
+
+
+@media (max-width: 600px) {
+    .Nav {
+      flex-direction: column;
+      padding: 10px;
+      width: 100px;
+    }
+  }
+

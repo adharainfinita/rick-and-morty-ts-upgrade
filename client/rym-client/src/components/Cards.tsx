@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import {useSelector, useDispatch} from "react-redux";
 import { RootState } from "../store";
 import { Character } from "../features/charactersSlice";
-import "../styles/Cards-styles.css";
+import styles from "../styles/Cards-styles.module.css";
 import swal from "sweetalert";
 import { removeCharacter } from "../features/charactersSlice";
 
@@ -17,7 +17,7 @@ export const Cards: React.FC = ()=>{
            title: '¿Deseas eliminar la carta?',
            text: "Este cambio es irreversible",
            icon: "warning", 
-           buttons: ["Aceptar", "Cancelar"],
+           buttons: ["Cancelar", "Aceptar"],
            dangerMode: true,
         })
         .then((willDelete)=>{
@@ -48,7 +48,7 @@ export const Cards: React.FC = ()=>{
     )})
 
     return (
-        <div className="Cards">
+        <div className={styles.Cards}>
             {pjs}
         </div>
     )

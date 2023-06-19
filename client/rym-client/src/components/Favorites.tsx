@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { filterFav, orderFav, getAllFav } from "../features/favoritesSlice";
 import {useEffect} from "react";
 import { URL_BASE, URL_FAVORITES } from "../utils/api";
-import "../styles/Favorites.css";
+import styles from "../styles/Favorites.module.css";
 import { removeCharacter } from "../features/charactersSlice";
 
 export const Favorites = () =>{
@@ -17,7 +17,7 @@ export const Favorites = () =>{
         dispatch(removeCharacter(id))
     }
     useEffect(()=>{
-            fetch(`${URL_BASE}${URL_FAVORITES}/${userID}`)
+            fetch(`${URL_BASE}${URL_FAVORITES}/${String(userID)}`)
             .then(response => response.json())
             .then(data => dispatch(getAllFav(data)))
     }, [dispatch, userID])
@@ -37,22 +37,22 @@ export const Favorites = () =>{
 
         return (
             <main>
-                <select className="options" name="order" onChange={handleOrderAndFilter} >
+                <select className={styles.options} name="order" onChange={handleOrderAndFilter} >
                     <option value="A">Ascendente</option>
                     <option value="D">Descendente</option>
                 </select>
-                <select className="options" name="filter" onChange={handleOrderAndFilter}>
+                <select className={styles.options} name="filter" onChange={handleOrderAndFilter}>
                     <option value="All">All</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Genderless">Genderless</option>
                     <option value="unknown">unknown</option>
                 </select>
-                <div>{myFavorites.map((char)=>{
+                <div>{myFavorites.map((char, index)=>{
                     return (
-                    <div id="fav">
+                    <div >
                         <Card
-                            key={char.id}
+                            key={index}
                             id={char.id}
                             name={char.name}
                             status={char.status}

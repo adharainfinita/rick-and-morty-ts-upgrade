@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import { addCharacter } from "../features/charactersSlice";
 import axios from "axios";
 import { URL_BASE, URL_CHARACTER } from "../utils/api";
-import "../styles/SearchBar-Styles.css";
+import styles from "../styles/SearchBar-Styles.module.css";
 import swal from "sweetalert";
 
 
@@ -49,19 +49,27 @@ export const SearchBar: React.FC = ()=>{
       
       dispatch(addCharacter(response.data));
    }
+   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Enter") {
+  
+        onSearch(id);
+        setId("")
+      }
+    };
 
     return (
-        <div className="bar">
-           <section className="section">
-           <input id="input" type='search' placeholder="Busca un personaje" 
-           onChange={handleChange} value={id}/>
-           <button id="button1" onClick={() => {onSearch(id); setId("")}}>+</button>
-           </section>
-           <section className="section">
-              <button id="buttonRandom" onClick={getRandomCharacter} >
-              <img id="image" src="https://cdn-icons-png.flaticon.com/512/246/246569.png"/>
+        <div className={styles.searchBar}>
+           <input className={styles.input} type='text' placeholder="Busca un personaje" 
+           onChange={handleChange} value={id}
+            onKeyDown={handleKeyDown} />
+           <section >
+            <button className={styles.button} onClick={() => {onSearch(id); setId("")}}>+</button>
+              <button className={styles.button} onClick={getRandomCharacter} >
+              <img className={styles.image} src="https://cdn-icons-png.flaticon.com/512/246/246569.png"/>
            </button>
            </section>
+           
+
            
         </div>
      );

@@ -24,6 +24,7 @@ a:hover {
 }
 
 body {
+  background-image:radial-gradient( rgb(33, 4, 33), black);
   margin: 0;
   display: flex;
   place-items: center;
@@ -67,3 +68,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
