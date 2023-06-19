@@ -4,7 +4,7 @@ import { Card } from "./Card";
 import { useDispatch } from "react-redux";
 import { filterFav, orderFav, getAllFav } from "../features/favoritesSlice";
 import {useEffect} from "react";
-import { URL_FAVORITES } from "../utils/api";
+import { URL_BASE, URL_FAVORITES } from "../utils/api";
 import "../styles/Favorites.css";
 import { removeCharacter } from "../features/charactersSlice";
 
@@ -17,7 +17,7 @@ export const Favorites = () =>{
         dispatch(removeCharacter(id))
     }
     useEffect(()=>{
-            fetch(`${URL_FAVORITES}/${userID}`)
+            fetch(`${URL_BASE}${URL_FAVORITES}/${userID}`)
             .then(response => response.json())
             .then(data => dispatch(getAllFav(data)))
     }, [dispatch, userID])

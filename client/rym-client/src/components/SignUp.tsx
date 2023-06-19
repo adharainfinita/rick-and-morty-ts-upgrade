@@ -2,7 +2,7 @@ import { useState} from "react"
 import { FormValues } from "./SignOn";
 import getRandomName from "../utils/randomizer";
 import { addUser} from "../features/userSlice";
-import { URL_LOGIN } from "../utils/api";
+import { URL_BASE, URL_LOGIN } from "../utils/api";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -76,7 +76,7 @@ export const SignUp = () =>{
         event.preventDefault;
         const {email, password} =  userData
         try {
-            const response = await axios.post(URL_LOGIN, {
+            const response = await axios.post(URL_BASE+URL_LOGIN, {
                 email,
                 password
             });

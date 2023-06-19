@@ -4,7 +4,7 @@ import { RootState } from "../store";
 import { useNavigate, Link } from "react-router-dom";
 import { addUser, authorizeUser } from "../features/userSlice";
 import axios from "axios";
-import { URL_LOGIN } from "../utils/api";
+import { URL_BASE, URL_LOGIN } from "../utils/api";
 import validate from "../utils/validate";
 import "../styles/Login.css"
 
@@ -57,7 +57,7 @@ export const SignOn: React.FC = () => {
         event.preventDefault();
         const {email, password} = userData
       try{
-        const response = await axios(`${URL_LOGIN}?email=${email}&password=${password}`);
+        const response = await axios(`${URL_BASE}${URL_LOGIN}?email=${email}&password=${password}`);
         console.log(response.data);
         
         if(response.data){
