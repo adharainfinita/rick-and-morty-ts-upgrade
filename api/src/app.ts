@@ -10,7 +10,7 @@ server.use(express.json());
 
 
 server.use((req, res, next)=>{
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'rick-and-morty-ts-upgrade-production.up.railway.app');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header(
         'Access-Control-Allow-Headers',

@@ -3,7 +3,7 @@ import axios from "axios";
 import dotenv from 'dotenv';
 dotenv.config();
 
-const URL = process.env.API_URL;
+const URL = process.env.API_URL || "https://rickandmortyapi.com/api/character";
 
 const getCharById: RequestHandler = async(req, res)=>{
     console.log(URL);
